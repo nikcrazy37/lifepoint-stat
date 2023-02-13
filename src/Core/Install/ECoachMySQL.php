@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lifepoint\Stat\Core\Install;
 
-use Lifepoint\Stat\Core\Connection\MySQL;
+use Lifepoint\Stat\Core\Database\Connection\MySQL;
 
 class ECoachMySQL
 {
@@ -17,7 +17,12 @@ class ECoachMySQL
 
     public function install()
     {
-        $this->client->query("create table `views_ecoach` (
+        $this->installTable();
+    }
+
+    private function installTable()
+    {
+        $this->client->query("create table `visit_ecoach` (
   `id` int(11) not null auto_increment,
   `dateCreate` date default now(),
   `userId` int(11) not null,
@@ -32,6 +37,11 @@ class ECoachMySQL
 
     public function uninstall()
     {
-        $this->client->query("drop table views_ecoach");
+        $this->uninstallTable();
+    }
+
+    private function uninstallTable()
+    {
+        $this->client->query("drop table visit_ecoach");
     }
 }

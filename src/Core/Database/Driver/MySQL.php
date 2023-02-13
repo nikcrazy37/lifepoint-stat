@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lifepoint\Stat\Controller\Repository;
+namespace Lifepoint\Stat\Core\Database\Driver;
 
 use Lifepoint\Stat\Core\Exception\NotFoundSelectException;
 use PDO;
 
-class MySQL extends Repository
+class MySQL extends DB
 {
     /**
      * @param array $data
@@ -52,7 +52,7 @@ class MySQL extends Repository
      */
     protected function getConnection(): PDO
     {
-        return (new \Lifepoint\Stat\Core\Connection\MySQL())->pdo;
+        return (new \Lifepoint\Stat\Core\Database\Connection\MySQL())->pdo;
     }
 
     /**

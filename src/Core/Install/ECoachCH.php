@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Lifepoint\Stat\Core\Install;
 
 use ClickHouseDB\Client;
-use Lifepoint\Stat\Core\Connection\ClickHouse;
+use Lifepoint\Stat\Core\Database\Connection\ClickHouse;
 
 class ECoachCH
 {
@@ -18,9 +18,18 @@ class ECoachCH
 
     public function install()
     {
-        $this->client->write("create database lifepoint");
+        $this->installDB();
+        $this->installTable();
+    }
 
-        $this->client->write("create table if not exists lifepoint.views_ecoach (
+    private function installDB()
+    {
+        $this->client->write("create database lifepoint");
+    }
+
+    private function installTable()
+    {
+        $this->client->write("create table if not exists lifepoint.visit_ecoach (
     dateCreate DateTime default now(),
     userId UInt32,
     userName String,
@@ -32,15 +41,21 @@ class ECoachCH
 ENGINE = MergeTree()
 order by dateCreate
 ");
-
-        $database = $this->client->showDatabases();
-        $table = $this->client->showCreateTable("lifepoint.views_ecoach");
-        print_r($database);
-        print_r($table);
     }
 
     public function uninstall()
     {
-        $this->client->write("drop table lifepoint.views_ecoach");
+        $this->uninstallDB();
+        $this->uninstallTable();
+    }
+
+    private function uninstallDB()
+    {
+        $this->client->write("drop database lifepoint");
+    }
+
+    private function uninstallTable()
+    {
+        $this->client->write("drop table lifepoint.visit_ecoach");
     }
 }

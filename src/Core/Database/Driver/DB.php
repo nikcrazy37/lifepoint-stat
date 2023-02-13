@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lifepoint\Stat\Controller\Repository;
+namespace Lifepoint\Stat\Core\Database\Driver;
 
-use Lifepoint\Stat\Model\Query\Where;
+use Lifepoint\Stat\Entity\Query\Where;
 
-abstract class Repository
+abstract class DB
 {
     protected string $table;
     protected string $select;

@@ -14,9 +14,23 @@ class Config
      */
     public static function getOption($key)
     {
-        $configPath = self::CONFIG_PATH;
+        $configPath = self::getPath();
+
         $config = parse_ini_file($configPath);
 
         return $config[$key];
+    }
+
+    /**
+     * @return string
+     */
+    public static function getPath(): string
+    {
+        $configPath = $_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/config/stat.config.ini";
+        if (!file_exists($configPath)) {
+            $configPath = self::CONFIG_PATH;
+        }
+
+        return $configPath;
     }
 }

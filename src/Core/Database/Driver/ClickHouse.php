@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lifepoint\Stat\Controller\Repository;
+namespace Lifepoint\Stat\Core\Database\Driver;
 
 use ClickHouseDB\Client;
 use Lifepoint\Stat\Core\Exception\NotFoundSelectException;
 
-class ClickHouse extends Repository
+class ClickHouse extends DB
 {
     /**
      * @param array $data
@@ -47,7 +47,7 @@ class ClickHouse extends Repository
      */
     protected function getConnection(): Client
     {
-        return (new \Lifepoint\Stat\Core\Connection\ClickHouse())->client;
+        return (new \Lifepoint\Stat\Core\Database\Connection\ClickHouse())->client;
     }
 
     /**

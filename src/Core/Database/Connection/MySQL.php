@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lifepoint\Stat\Core\Connection;
+namespace Lifepoint\Stat\Core\Database\Connection;
 
 use Lifepoint\Stat\Core\Config;
 use PDO;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lifepoint\Stat\Model\Query;
+namespace Lifepoint\Stat\Entity\Query;
 
 class Where
 {
