@@ -1,0 +1,14 @@
+{
+    "name": "lifepoint/stat",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Lifepoint\\Stat\\": "src/"
+        }
+    },
+    "require": {
+        "smi2/phpclickhouse": "^1.5",
+        "ext-pdo": "*",
+        "php": ">=7.4"
+    }
+}
