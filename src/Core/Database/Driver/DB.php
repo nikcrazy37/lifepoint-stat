@@ -63,8 +63,6 @@ abstract class DB
 
             $this->select .= $where->getParam() . " ";
             $this->select .= $where->getOperator() . " ";
-
-            // TODO: Handling all type. Now support -> date type
             $this->select .= $this->prepareWhereValue($where->getValue());
         });
     }

@@ -62,7 +62,7 @@ class MySQL extends DB
     protected function prepareWhereValue($value)
     {
         if ((int)$value !== $value) {
-            return "\"$value\"";
+            return "'$value'";
         }
 
         return $value;

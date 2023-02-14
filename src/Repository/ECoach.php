@@ -9,6 +9,7 @@ use Lifepoint\Stat\Core\Database\Driver\DB;
 use Lifepoint\Stat\Entity\ECoach as Entity;
 use Lifepoint\Stat\Core\Database\Driver\ClickHouse;
 use Lifepoint\Stat\Core\Database\Driver\MySQL;
+use Lifepoint\Stat\Entity\Query\Where;
 
 class ECoach
 {
@@ -35,6 +36,19 @@ class ECoach
                 "departmentId" => $entity->getDepartmentId(),
                 "departmentName" => $entity->getDepartmentName(),
             )
+        );
+    }
+
+    public function getById(string $id): Entity
+    {
+        return new Entity(
+            current($this->db->select(
+                array(
+                    "where" => array(
+                        new Where("id", "=", $id)
+                    )
+                )
+            ))
         );
     }
 

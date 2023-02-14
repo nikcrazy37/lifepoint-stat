@@ -61,7 +61,7 @@ class ClickHouse extends DB
         }
 
         if ((int)$value !== $value) {
-            return "\"$value\"";
+            return "'$value'";
         }
 
         return $value;

@@ -30,7 +30,8 @@ class ECoachCH
     private function installTable()
     {
         $this->client->write("create table if not exists lifepoint.visit_ecoach (
-    dateCreate DateTime default now(),
+    id UUID default generateUUIDv4(),
+    dateCreate DateTime('Europe/Moscow') default now(),
     userId UInt32,
     userName String,
     bankId UInt32,
@@ -45,8 +46,8 @@ order by dateCreate
 
     public function uninstall()
     {
-        $this->uninstallDB();
         $this->uninstallTable();
+        $this->uninstallDB();
     }
 
     private function uninstallDB()

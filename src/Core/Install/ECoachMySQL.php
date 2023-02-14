@@ -24,7 +24,7 @@ class ECoachMySQL
     {
         $this->client->query("create table `visit_ecoach` (
   `id` int(11) not null auto_increment,
-  `dateCreate` date default now(),
+  `dateCreate` datetime default now(),
   `userId` int(11) not null,
   `userName` varchar(255) not null,
   `bankId` int(11) not null,

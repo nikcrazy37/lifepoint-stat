@@ -6,7 +6,7 @@ namespace Lifepoint\Stat\Entity;
 
 class ECoach
 {
-    private int $id;
+    private string $id;
     private string $dateCreate;
     private int $userId;
     private string $userName;
@@ -26,18 +26,18 @@ class ECoach
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      * @return ECoach
      */
-    public function setId(int $id): ECoach
+    public function setId(string $id): ECoach
     {
         $this->id = $id;
 
