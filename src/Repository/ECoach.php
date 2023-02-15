@@ -35,6 +35,12 @@ class ECoach
                 "bankName" => $entity->getBankName(),
                 "departmentId" => $entity->getDepartmentId(),
                 "departmentName" => $entity->getDepartmentName(),
+                "cityId" => $entity->getCityId(),
+                "cityName" => $entity->getCityName(),
+                "ip" => $entity->getIp(),
+                "geo" => $entity->getGeo(),
+                "url" => $entity->getUrl(),
+                "userAgent" => $entity->getUserAgent(),
             )
         );
     }

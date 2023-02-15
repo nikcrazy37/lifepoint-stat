@@ -31,6 +31,12 @@ class ECoachMySQL
   `bankName` varchar(255) not null,
   `departmentId` int(11) not null,
   `departmentName` varchar(255) not null,
+  `cityId` int(11) not null,
+  `cityName` varchar(255) not null,
+  `ip` varchar(255) not null,
+  `geo` varchar(255) not null,
+  `url` varchar(255) not null,
+  `userAgent` varchar(255) not null,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB");
     }

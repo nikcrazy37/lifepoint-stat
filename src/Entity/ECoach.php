@@ -14,6 +14,12 @@ class ECoach
     private string $bankName;
     private int $departmentId;
     private string $departmentName;
+    private int $cityId;
+    private string $cityName;
+    private string $ip;
+    private string $geo;
+    private string $url;
+    private string $userAgent;
 
     /**
      * @param array $param
@@ -173,6 +179,120 @@ class ECoach
     public function setDepartmentName(string $departmentName): ECoach
     {
         $this->departmentName = $departmentName;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCityId(): int
+    {
+        return $this->cityId;
+    }
+
+    /**
+     * @param int $cityId
+     * @return ECoach
+     */
+    public function setCityId(int $cityId): ECoach
+    {
+        $this->cityId = $cityId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCityName(): string
+    {
+        return $this->cityName;
+    }
+
+    /**
+     * @param string $cityName
+     * @return ECoach
+     */
+    public function setCityName(string $cityName): ECoach
+    {
+        $this->cityName = $cityName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIp(): string
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param string $ip
+     * @return ECoach
+     */
+    public function setIp(string $ip): ECoach
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGeo(): string
+    {
+        return $this->geo;
+    }
+
+    /**
+     * @param string $geo
+     * @return ECoach
+     */
+    public function setGeo(string $geo): ECoach
+    {
+        $this->geo = $geo;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     * @return ECoach
+     */
+    public function setUrl(string $url): ECoach
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserAgent(): string
+    {
+        return $this->userAgent;
+    }
+
+    /**
+     * @param string $userAgent
+     * @return ECoach
+     */
+    public function setUserAgent(string $userAgent): ECoach
+    {
+        $this->userAgent = $userAgent;
 
         return $this;
     }

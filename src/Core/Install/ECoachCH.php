@@ -30,14 +30,19 @@ class ECoachCH
     private function installTable()
     {
         $this->client->write("create table if not exists lifepoint.visit_ecoach (
-    id UUID default generateUUIDv4(),
-    dateCreate DateTime('Europe/Moscow') default now(),
+    dateCreate DateTime default now(),
     userId UInt32,
     userName String,
     bankId UInt32,
     bankName String,
     departmentId UInt32,
-    departmentName String
+    departmentName String,
+    cityId UInt32,
+    cityName String,
+    ip String,
+    geo String,
+    url String,
+    userAgent String,
 )
 ENGINE = MergeTree()
 order by dateCreate
