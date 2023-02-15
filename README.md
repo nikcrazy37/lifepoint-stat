@@ -42,7 +42,13 @@ $repository->add(
             "bankId" => 1,
             "bankName" => "some bank name",
             "departmentId" => 1,
-            "departmentName" => "some department name"
+            "departmentName" => "some department name",
+            "cityId" => 1,
+            "cityName" => "some city name",
+            "ip" => "127.0.0.1",
+            "geo" => "{'latitude': 'latitude value', 'longtitude': 'longtitude value'}",
+            "url" => "some url",
+            "userAgent" => "some userAgent",
         )
     )
 );
