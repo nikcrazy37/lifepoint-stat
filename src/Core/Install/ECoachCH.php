@@ -30,7 +30,7 @@ class ECoachCH
     private function installTable()
     {
         $this->client->write("create table if not exists lifepoint.visit_ecoach (
-    dateCreate DateTime default now(),
+    dateCreate DateTime('Europe/Moscow') default now(),
     userId UInt32,
     userName String,
     bankId UInt32,
