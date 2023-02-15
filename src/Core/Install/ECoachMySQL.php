@@ -27,6 +27,7 @@ class ECoachMySQL
   `dateCreate` datetime default now(),
   `userId` int(11) not null,
   `userName` varchar(255) not null,
+  `login` varchar(255) not null, 
   `bankId` int(11) not null,
   `bankName` varchar(255) not null,
   `departmentId` int(11) not null,

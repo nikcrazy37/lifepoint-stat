@@ -41,6 +41,7 @@ $repository->add(
             "userName" => "some user name",
             "bankId" => 1,
             "bankName" => "some bank name",
+            "login" => "some login",
             "departmentId" => 1,
             "departmentName" => "some department name",
             "cityId" => 1,

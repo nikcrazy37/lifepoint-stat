@@ -33,6 +33,7 @@ class ECoachCH
     dateCreate DateTime('Europe/Moscow') default now(),
     userId UInt32,
     userName String,
+    login String,
     bankId UInt32,
     bankName String,
     departmentId UInt32,

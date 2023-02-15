@@ -31,6 +31,7 @@ class ECoach
             array(
                 "userId" => $entity->getUserId(),
                 "userName" => $entity->getUserName(),
+                "login" => $entity->getLogin(),
                 "bankId" => $entity->getBankId(),
                 "bankName" => $entity->getBankName(),
                 "departmentId" => $entity->getDepartmentId(),

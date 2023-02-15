@@ -10,6 +10,7 @@ class ECoach
     private string $dateCreate;
     private int $userId;
     private string $userName;
+    private string $login;
     private int $bankId;
     private string $bankName;
     private int $departmentId;
@@ -103,6 +104,25 @@ class ECoach
     public function setUserName(string $userName): ECoach
     {
         $this->userName = $userName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param string $login
+     * @return ECoach
+     */
+    public function setLogin(string $login): ECoach
+    {
+        $this->login = $login;
 
         return $this;
     }
