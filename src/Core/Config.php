@@ -16,9 +16,16 @@ class Config
     {
         $configPath = self::getPath();
 
-        $config = parse_ini_file($configPath);
+        $content = file_get_contents($configPath);
+        $content = explode("\n", $content);
 
-        return $config[$key];
+        $file = array();
+        array_walk($content, function ($row) use (&$file) {
+            $exp = array_map("trim", explode("=", $row));
+            $file[$exp[0]] = $exp[1];
+        });
+
+        return $file[$key];
     }
 
     /**
